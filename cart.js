@@ -1,7 +1,7 @@
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 // Substitua pela sua chave Pix
-const pixKey = 'SUA_CHAVE_PIX_AQUI';
+const pixKey = '26d11f07-4d5c-483d-a8c9-229cb633237d';
 
 function addToCart(productName, price) {
     const product = {
