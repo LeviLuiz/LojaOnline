@@ -1,45 +1,43 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produtos - Loja Online</title>
+    <title>Produtos - Sítio Origem Caipira</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="cart.js" defer></script>
 </head>
 <body>
     <header>
-        <div class="container">
-            <h1>Loja Online</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="produtos.html">Produtos</a></li>
-                    <li><a href="contato.html">Contato</a></li>
-                    <li><a href="carrinho.html">Carrinho</a></li>
-                </ul>
-            </nav>
-        </div>
+        <h1>Sítio Origem Caipira</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="produtos.html">Produtos</a></li>
+                <li><a href="carrinho.html">Carrinho</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
     </header>
-    <main>
-        <div class="container">
-            <h2>Nossos Produtos</h2>
-            <div class="product">
-                <h3>Produto 1</h3>
-                <p>Preço: R$ 100,00</p>
-                <button onclick="addToCart('Produto 1', 100.00)">Adicionar ao Carrinho</button>
-            </div>
-            <div class="product">
-                <h3>Produto 2</h3>
-                <p>Preço: R$ 200,00</p>
-                <button onclick="addToCart('Produto 2', 200.00)">Adicionar ao Carrinho</button>
-            </div>
+
+    <div class="container">
+        <h2>Nossos Produtos</h2>
+        <div class="product">
+            <h3>Produto 1</h3>
+            <p>Descrição do Produto 1</p>
+            <p>Preço: R$ 10,00</p>
+            <button class="btn" onclick="addToCart('Produto 1', 10.00)">Adicionar ao Carrinho</button>
         </div>
-    </main>
+        <div class="product">
+            <h3>Produto 2</h3>
+            <p>Descrição do Produto 2</p>
+            <p>Preço: R$ 20,00</p>
+            <button class="btn" onclick="addToCart('Produto 2', 20.00)">Adicionar ao Carrinho</button>
+        </div>
+    </div>
+
     <footer>
-        <div class="container">
-            <p>&copy; 2024 Loja Online. Todos os direitos reservados.</p>
-        </div>
+        <p>&copy; 2024 Sítio Origem Caipira. Todos os direitos reservados.</p>
     </footer>
-    <script src="cart.js"></script>
 </body>
 </html>

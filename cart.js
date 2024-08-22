@@ -1,84 +1,66 @@
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
+let totalDonation = JSON.parse(localStorage.getItem('totalDonation')) || 0.00;
 
-// Substitua pela sua chave Pix
-const pixKey = '26d11f07-4d5c-483d-a8c9-229cb633237d';
-
-function addToCart(productName, price) {
-    const product = {
-        name: productName,
-        price: price
-    };
-    
-    cart.push(product);
-    localStorage.setItem('cart', JSON.stringify(cart));
-    alert(`${productName} foi adicionado ao carrinho!`);
-    updateCartDisplay();
+function addToCart(productName, productPrice) {
+    cart.push({ name: productName, price: productPrice });
+    saveCart();
+    updateCart();
 }
 
-function updateCartDisplay() {
+function saveCart() {
+    localStorage.setItem('cart', JSON.stringify(cart));
+    localStorage.setItem('totalDonation', JSON.stringify(totalDonation));
+}
+
+function updateCart() {
     const cartItems = document.getElementById('cart-items');
-    const totalPriceElement = document.getElementById('total-price');
+    const totalPrice = document.getElementById('total-price');
     cartItems.innerHTML = '';
-    
     let total = 0;
+
     cart.forEach((item, index) => {
-        const listItem = document.createElement('li');
-        listItem.innerHTML = `
-            ${item.name} - R$ ${item.price.toFixed(2)}
-            <button class="btn remove-btn" onclick="removeFromCart(${index})">Remover</button>
-        `;
-        cartItems.appendChild(listItem);
+        const li = document.createElement('li');
+        li.textContent = `${item.name} - R$ ${item.price.toFixed(2)}`;
+        cartItems.appendChild(li);
         total += item.price;
     });
 
-    totalPriceElement.textContent = `Total: R$ ${total.toFixed(2)}`;
+    total += totalDonation;
+    totalPrice.textContent = `Total: R$ ${total.toFixed(2)}`;
 }
 
-function removeFromCart(index) {
-    cart.splice(index, 1);
-    localStorage.setItem('cart', JSON.stringify(cart));
-    updateCartDisplay();
+function addDonation(amount) {
+    totalDonation += amount;
+    saveCart();
+    document.getElementById('donation-total').textContent = `Total da Doação: R$ ${totalDonation.toFixed(2)}`;
+    updateCart();
+}
+
+function addCustomDonation() {
+    const donationInput = document.getElementById('custom-donation');
+    const donationAmount = parseFloat(donationInput.value);
+    if (!isNaN(donationAmount)) {
+        addDonation(donationAmount);
+    }
+    donationInput.value = '';
 }
 
 function checkout() {
-    if (cart.length > 0) {
-        const total = cart.reduce((sum, item) => sum + item.price, 0);
-        generateQRCode(total);
-    } else {
-        alert('O carrinho está vazio!');
-    }
+    const totalAmount = cart.reduce((sum, item) => sum + item.price, 0) + totalDonation;
+    const pixKey = '064.056.691-24'; // Substitua pela chave PIX correta
+    const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=Pix%20${pixKey}%20R$${totalAmount.toFixed(2)}`;
+    const qrCodeImg = document.getElementById('qr-code');
+    qrCodeImg.src = qrCodeUrl;
+    qrCodeImg.style.display = 'block';
 }
 
 function cancelAll() {
-    if (cart.length > 0) {
-        const confirmation = confirm('Você tem certeza que deseja cancelar toda a compra?');
-        if (confirmation) {
-            cart = [];
-            localStorage.setItem('cart', JSON.stringify(cart));
-            updateCartDisplay();
-            alert('A compra foi cancelada.');
-        }
-    } else {
-        alert('O carrinho está vazio!');
-    }
+    cart = [];
+    totalDonation = 0;
+    saveCart();
+    updateCart();
+    document.getElementById('qr-code').style.display = 'none';
 }
 
-function generateQRCode(total) {
-    const qrCodeContainer = document.getElementById('qr-code-container');
-    const qrCodeImage = document.getElementById('qr-code');
-
-    // Exemplo de geração do código Pix (troque os valores conforme necessário)
-    const pixCode = `00020126580014BR.GOV.BCB.PIX0114${pixKey}5204000053039865404${total.toFixed(2)}5802BR5925Nome Do Recebedor6009Cidade00062070503***6304`;
-
-    const qrCodeAPI = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(pixCode)}`;
-
-    qrCodeImage.src = qrCodeAPI;
-    qrCodeImage.style.display = 'block';
-    alert('Compra finalizada! Escaneie o QR code para efetuar o pagamento.');
-    cart = []; // Limpa o carrinho após a compra
-    localStorage.setItem('cart', JSON.stringify(cart));
-    updateCartDisplay();
-}
-
-// Atualiza o carrinho ao carregar a página
-document.addEventListener('DOMContentLoaded', updateCartDisplay);
+// Ao carregar a página, atualize o carrinho com os itens armazenados
+document.addEventListener('DOMContentLoaded', updateCart);

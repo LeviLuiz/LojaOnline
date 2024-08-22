@@ -1,47 +1,52 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrinho - Loja Online</title>
+    <title>Carrinho - Sítio Origem Caipira</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="cart.js" defer></script>
 </head>
 <body>
     <header>
-        <div class="container">
-            <h1>Loja Online</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="produtos.html">Produtos</a></li>
-                    <li><a href="contato.html">Contato</a></li>
-                    <li><a href="carrinho.html">Carrinho</a></li>
-                </ul>
-            </nav>
-        </div>
+        <h1>Sítio Origem Caipira</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="produtos.html">Produtos</a></li>
+                <li><a href="carrinho.html">Carrinho</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
     </header>
-    <main>
-        <section class="cart">
-            <div class="container">
-                <h2>Seu Carrinho</h2>
-                <ul id="cart-items">
-                    <!-- Produtos adicionados ao carrinho serão exibidos aqui -->
-                </ul>
-                <p id="total-price">Total: R$ 0,00</p>
-                <button class="btn" onclick="checkout()">Finalizar Compra</button>
-                <button class="btn cancel-btn" onclick="cancelAll()">Cancelar Compra</button>
-                <div id="qr-code-container" style="margin-top: 20px;">
-                    <h3>QR Code de Pagamento:</h3>
-                    <img id="qr-code" src="" alt="QR Code" style="display: none;">
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Loja Online. Todos os direitos reservados.</p>
+
+    <div class="container">
+        <h2>Seu Carrinho</h2>
+        <ul id="cart-items"></ul>
+        <p id="total-price">Total: R$ 0,00</p>
+        <button class="btn" onclick="checkout()">Finalizar Compra</button>
+        <button class="btn cancel-btn" onclick="cancelAll()">Cancelar Compra</button>
+
+        <div id="qr-code-container">
+            <img id="qr-code" alt="QR Code para Pagamento" style="display:none;">
         </div>
+
+        <div class="donation">
+            <h2>Doação</h2>
+            <p>Gostaria de fazer uma doação?</p>
+            <button class="btn" onclick="addDonation(5)">Adicionar R$ 5,00</button>
+            <button class="btn" onclick="addDonation(10)">Adicionar R$ 10,00</button>
+            <button class="btn" onclick="addDonation(20)">Adicionar R$ 20,00</button>
+            <div>
+                <input type="number" id="custom-donation" placeholder="Outro valor">
+                <button class="btn" onclick="addCustomDonation()">Adicionar</button>
+            </div>
+            <p id="donation-total">Total da Doação: R$ 0,00</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Sítio Origem Caipira. Todos os direitos reservados.</p>
     </footer>
-    <script src="cart.js"></script>
 </body>
 </html>

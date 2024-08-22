@@ -1,167 +1,118 @@
+/* Estilos básicos */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
-    color: #333;
 }
 
 header {
     background-color: #333;
-    color: #fff;
+    color: white;
     padding: 10px 0;
+    text-align: center;
 }
 
 header h1 {
     margin: 0;
-    text-align: center;
+    font-size: 24px;
 }
 
 nav ul {
-    list-style: none;
+    list-style-type: none;
     padding: 0;
-    display: flex;
-    justify-content: center;
 }
 
 nav ul li {
-    margin: 0 15px;
+    display: inline;
+    margin-right: 20px;
 }
 
 nav ul li a {
-    color: #fff;
+    color: white;
     text-decoration: none;
-    font-weight: bold;
 }
 
 .container {
     width: 80%;
-    margin: 0 auto;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-.hero {
-    background-color: #e2e2e2;
-    padding: 50px 0;
-    text-align: center;
+h2 {
+    margin-top: 0;
 }
 
-.hero h2 {
+.product, .cart-item {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.product h3 {
     margin: 0;
-    font-size: 2.5em;
 }
 
-.hero p {
-    font-size: 1.2em;
-    margin: 20px 0;
+.product p, .cart-item p {
+    margin: 5px 0;
 }
 
 .btn {
-    background-color: #333;
-    color: #fff;
     padding: 10px 20px;
-    text-decoration: none;
+    background-color: #28a745;
+    color: white;
     border: none;
-    display: inline-block;
-    margin-top: 10px;
     cursor: pointer;
+    text-align: center;
+}
+
+.btn.cancel-btn {
+    background-color: #dc3545;
 }
 
 .btn:hover {
-    background-color: #555;
+    background-color: #218838;
 }
 
-.products {
-    padding: 20px 0;
-}
-
-.product {
-    background-color: #fff;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.product img {
-    max-width: 100%;
-    height: auto;
-}
-
-.contact form {
-    display: flex;
-    flex-direction: column;
-}
-
-.contact form label {
-    margin-top: 10px;
-}
-
-.contact form input,
-.contact form textarea {
-    padding: 10px;
-    margin-top: 5px;
-}
-
-.contact form button {
-    margin-top: 20px;
+.btn.cancel-btn:hover {
+    background-color: #c82333;
 }
 
 footer {
     background-color: #333;
-    color: #fff;
-    padding: 10px 0;
+    color: white;
     text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
 }
 
-.cart {
-    padding: 20px 0;
+footer p {
+    margin: 0;
+}
+
+.donation {
+    margin-top: 20px;
+    padding: 20px;
     background-color: #f9f9f9;
-    border-top: 1px solid #ddd;
+    border: 1px solid #ddd;
 }
 
-.cart h2 {
+.donation h2 {
     margin-top: 0;
 }
 
-#cart-items {
-    list-style: none;
-    padding: 0;
-}
-
-#cart-items li {
-    margin-bottom: 10px;
-}
-
-#total-price {
-    font-weight: bold;
+.donation div {
     margin-top: 10px;
 }
 
-/* Botão de remover item */
-.remove-btn {
-    background-color: #e74c3c;
-    color: #fff;
-    margin-left: 10px;
-    padding: 5px 10px;
-    border: none;
-    cursor: pointer;
+.donation input {
+    padding: 5px;
+    width: 80px;
+    margin-right: 10px;
 }
 
-.remove-btn:hover {
-    background-color: #c0392b;
-}
-
-/* Botão de cancelar compra */
-.cancel-btn {
-    background-color: #e74c3c;
-    color: #fff;
-    margin-left: 10px;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-}
-
-.cancel-btn:hover {
-    background-color: #c0392b;
+#qr-code {
+    display: none;
+    margin-top: 20px;
 }
