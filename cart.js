@@ -46,6 +46,7 @@ function addCustomDonation() {
     donationInput.value = '';
 }
 
+/* Pix */
 function checkout() {
     const totalAmount = cart.reduce((sum, item) => sum + item.price, 0) + totalDonation;
     const pixKey = '26d11f07-4d5c-483d-a8c9-229cb633237d'; // Substitua pela chave PIX correta
