@@ -1,3 +1,4 @@
+/* Java script */
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 let totalDonation = JSON.parse(localStorage.getItem('totalDonation')) || 0.00;
 
@@ -47,7 +48,7 @@ function addCustomDonation() {
 
 function checkout() {
     const totalAmount = cart.reduce((sum, item) => sum + item.price, 0) + totalDonation;
-    const pixKey = '064.056.691-24'; // Substitua pela chave PIX correta
+    const pixKey = '26d11f07-4d5c-483d-a8c9-229cb633237d'; // Substitua pela chave PIX correta
     const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=Pix%20${pixKey}%20R$${totalAmount.toFixed(2)}`;
     const qrCodeImg = document.getElementById('qr-code');
     qrCodeImg.src = qrCodeUrl;
