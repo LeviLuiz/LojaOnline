@@ -68,15 +68,15 @@ h2 {
 }
 
 .btn.cancel-btn {
-    background-color: #dc3545;
+    background-color: #e43445;
 }
 
 .btn:hover {
-    background-color: #218838;
+    background-color: #0e912b;
 }
 
 .btn.cancel-btn:hover {
-    background-color: #c82333;
+    background-color: #c01b2b;
 }
 
 footer {
