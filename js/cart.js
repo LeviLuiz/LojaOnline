@@ -1,12 +1,5 @@
-/* Java script */
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 let totalDonation = JSON.parse(localStorage.getItem('totalDonation')) || 0.00;
-
-function addToCart(productName, productPrice) {
-    cart.push({ name: productName, price: productPrice });
-    saveCart();
-    updateCart();
-}
 
 function saveCart() {
     localStorage.setItem('cart', JSON.stringify(cart));
@@ -16,7 +9,7 @@ function saveCart() {
 function updateCart() {
     const cartItems = document.getElementById('cart-items');
     const totalPrice = document.getElementById('total-price');
-    cartItems.innerHTML = '';
+    cartItems.innerHTML = ''
     let total = 0;
 
     cart.forEach((item, index) => {
