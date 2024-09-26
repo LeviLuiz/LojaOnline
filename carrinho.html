@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loja Online</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="cart.js" defer></script>
+    <link rel="icon" href="./images/download.jpg">
+    <title>Loja Online</title>
 </head>
 
 <body>
@@ -36,10 +36,10 @@
         <p id="total-price">Total: R$ 0,00</p>
         <button class="btn" onclick="checkout()">Finalizar Compra</button>
         <button class="btn cancel-btn" onclick="cancelAll()">Cancelar Compra</button>
-     
+    
         <div id="qr-code-container">
             <img id="qr-code" alt="QR Code de Texto" style="display:none;">
-            <p>Por favor, adicione uma descrição no pix ou mande o comprovante para nosso WhatsApp.😉</p>
+            <p>Por favor, mande o comprovante pelo e-mail ou pelo nosso whatsapp.😉</p>
         </div>
 
         <div class="donation">
@@ -62,5 +62,5 @@
     </footer>
 
 </body>
-
+    <script src="js/cart.js" defer></script>
 </html>

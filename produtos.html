@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loja Online</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="cart.js" defer></script>
+    <link rel="icon" href="./images/download.jpg">
+    <title>Loja Online</title>
 </head>
 
 <body>
@@ -33,6 +33,7 @@
             <p>Queijo da Bisa 400 Gramas</p>
             <p>Preço: R$ 35,00</p>
             <button class="btn" onclick="addToCart('Queijo da Bisa', 35.00)">Adicionar ao Carrinho</button>
+            <img src="./images/download.jpg" id="foto1" alt="Foto" onmouseenter="zoom()">
         </div>
 
         <div class="product">
@@ -40,6 +41,7 @@
             <p>Pão de Queijo 1 Quilo</p>
             <p>Preço: R$ 30,00</p>
             <button class="btn" onclick="addToCart('Pão de Queijo', 30.00)">Adicionar ao Carrinho</button>
+            <img src="./images/download.jpg" id="foto2" alt="Foto">
         </div>
 
     </div>
@@ -48,5 +50,5 @@
         <p>&copy; 2024 Sítio Origem Caipira. Todos os direitos reservados.</p>
     </footer>
 </body>
-
+    <script src="./js/produtos.js" defer></script>
 </html>

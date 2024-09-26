@@ -35,10 +35,12 @@ nav ul li a {
 
 .container {
     width: 80%;
+    height: 500px;
     margin: 20px auto;
     padding: 20px;
     background-color: white;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    overflow-y: scroll;
 }
 
 h2 {
@@ -52,23 +54,27 @@ h2 {
 
 .product h3 {
     margin: 0;
+    margin-top: 10px;
 }
 
 .product p, .cart-item p {
-    margin: 5px 0;
+    margin: 10px 0;
 }
 
 .btn {
     padding: 10px 20px;
-    background-color: #28a745;
+    background-color: #26aa45;
     color: white;
-    border: none;
+    border: 2px solid rgb(33, 141, 33);
+    border-radius: 10px;
     cursor: pointer;
     text-align: center;
+    margin-top: 10px;
 }
 
 .btn.cancel-btn {
     background-color: #e43445;
+    border: 1px solid rgb(150, 14, 14);
 }
 
 .btn:hover {
@@ -79,12 +85,33 @@ h2 {
     background-color: #c01b2b;
 }
 
+#foto1 {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    top: 180px;
+    left: 400px;
+    border-radius: 50px;
+}
+
+#foto2 {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    top: 380px;
+    left: 400px;
+    border-radius: 50px;
+}
+
 footer {
     background-color: forestgreen;
     color: white;
     text-align: center;
     padding: 10px 0;
-    margin-top: 255px;
+    /*margin-top: 255px;*/
+    position: absolute;
+    width: 100%;
+    bottom: 0;
 }
 
 footer p {
@@ -115,4 +142,20 @@ footer p {
 #qr-code {
     display: none;
     margin-top: 20px;
+}
+
+.li i {
+    color: rgb(31, 145, 8);
+}
+
+.link {
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: blue;
+}
+
+.container a {
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
 }
