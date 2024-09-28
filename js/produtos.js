@@ -29,20 +29,41 @@ function updateCart() {
 }
 
 function zoom() {
-    img1 = document.getElementById('foto1')
-    img1.id = 'grande'
+    const img2 = document.getElementById('grande2');
+    if (img2) {
+        img2.id = 'foto2';  // Troca o ID de img2, se encontrado
+    }
+
+    const img1 = document.getElementById('foto1');
+    if (img1) {
+        img1.id = 'grande';  // Troca o ID de img1, se encontrado
+    }
 }
 
 function zoom2() {
-    img2 = document.getElementById('foto2')
-    img2.id = 'grande2'
+    const img1 = document.getElementById('grande');
+    if (img1) {
+        img1.id = 'foto1';  // Troca o ID de img1, se encontrado
+    }
+
+    const img2 = document.getElementById('foto2');
+    if (img2) {
+        img2.id = 'grande2';  // Troca o ID de img2, se encontrado
+    }
 }
+
+
 function saiu() {
-    img1 = document.getElementById('grande')
-    img1.id = 'foto1'
+    const img1 = document.getElementById('grande');
+    if (img1) {
+        img1.id = 'foto1';  // Troca o ID de img1, se encontrado
+    }
 }
 
 function saiu2() {
-    img2 = document.getElementById('grande2')
-    img2.id = 'foto2'
+    const img2 = document.getElementById('grande2');
+    if (img2) {
+        img2.id = 'foto2';  // Troca o ID de img2, se encontrado
+    }
 }
+
