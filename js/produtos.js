@@ -29,5 +29,20 @@ function updateCart() {
 }
 
 function zoom() {
-    body = document.querySelector('body')
+    img1 = document.getElementById('foto1')
+    img1.id = 'grande'
+}
+
+function zoom2() {
+    img2 = document.getElementById('foto2')
+    img2.id = 'grande2'
+}
+function saiu() {
+    img1 = document.getElementById('grande')
+    img1.id = 'foto1'
+}
+
+function saiu2() {
+    img2 = document.getElementById('grande2')
+    img2.id = 'foto2'
 }
