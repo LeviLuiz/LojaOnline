@@ -85,6 +85,14 @@ h2 {
     background-color: #c01b2b;
 }
 
+.btn:active {
+    background-color: rgb(23, 114, 0);
+}
+
+.btn.cancel-btn:active {
+    background-color: rgb(161, 0, 0);
+}
+
 img {
     cursor: pointer;
 }
